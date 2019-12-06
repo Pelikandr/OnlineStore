@@ -19,6 +19,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         scrollView.delegate = self
         scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
         
         super.viewDidLoad()
         super.viewDidLoad()
