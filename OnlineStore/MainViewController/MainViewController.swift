@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     
     var slides:[Slide] = []
+    var scrollingTimer: Timer?
     
     override func viewDidLoad() {
         scrollView.delegate = self
@@ -29,6 +30,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
         view.bringSubviewToFront(pageControl)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        scrollingTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.animateScrollView), userInfo: nil, repeats: true)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        scrollingTimer?.invalidate()
     }
 
     func createSlides() -> [Slide] {
@@ -60,6 +68,19 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)
+    }
+    
+    @objc func animateScrollView() {
+        let scrollWidth = scrollView.bounds.width
+        let currentXOffset = scrollView.contentOffset.x
+        
+        let lastXPos = currentXOffset + scrollWidth
+        if lastXPos != scrollView.contentSize.width {
+            scrollView.setContentOffset(CGPoint(x: lastXPos, y: 0), animated: true)
+        }
+        else {
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        }
     }
 
 }
