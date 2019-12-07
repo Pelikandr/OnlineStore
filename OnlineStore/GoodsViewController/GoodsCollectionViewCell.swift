@@ -8,13 +8,12 @@
 
 import UIKit
 
-class GoodsTableViewCell: UITableViewCell {
+class GoodsCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        self.layer.cornerRadius = 1.5
+        self.layer.borderWidth = 1
+        self.layer.masksToBounds = true
     }
 }

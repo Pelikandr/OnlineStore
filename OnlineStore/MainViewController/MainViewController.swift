@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var slides:[Slide] = []
+    var slides: [Slide] = []
     var scrollingTimer: Timer?
     
     override func viewDidLoad() {
@@ -42,14 +42,14 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
     func createSlides() -> [Slide] {
         
-        let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        let slide1: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide1.imageView.image = UIImage(named: "1")
         
         
-        let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        let slide2: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageView.image = UIImage(named: "2")
         
-        let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        let slide3: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide3.imageView.image = UIImage(named: "3")
         
         return [slide1, slide2, slide3]
@@ -83,6 +83,5 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         }
     }
-
 }
 

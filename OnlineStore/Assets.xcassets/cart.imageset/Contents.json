@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Интерьер-квартиры-гостиная.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icons8-shopping-cart-48.png",
       "scale" : "2x"
     },
     {

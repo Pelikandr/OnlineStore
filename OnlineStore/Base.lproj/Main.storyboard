@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Online Store-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="MainViewController" customModule="OnlineStore" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,8 +31,8 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="tzQ-KO-pvJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="c0f-1b-dz5"/>
+                    <navigationItem key="navigationItem" title="Online Store" id="tzQ-KO-pvJ">
+                        <barButtonItem key="rightBarButtonItem" image="cart" id="c0f-1b-dz5"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -87,7 +87,7 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Catalog" id="PmK-rU-Sha">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="GkE-h9-NMe"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" id="GkE-h9-NMe"/>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="Tjd-Wz-dQk" id="e92-xX-Uw2"/>
@@ -116,20 +116,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FIT-ym-q08">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoodsTableViewCell" id="Vam-3W-9zD" customClass="GoodsTableViewCell" customModule="OnlineStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vam-3W-9zD" id="nqU-Ut-YgO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-6W-Qzt">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -137,23 +123,74 @@
                                     <outlet property="delegate" destination="Xxg-yD-GqT" id="iYt-fh-l3T"/>
                                 </connections>
                             </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="geT-d2-uCW">
+                                <rect key="frame" x="10" y="120" width="355" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Kn-NG-Ad1">
+                                    <size key="itemSize" width="188" height="243"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="goodsCell" id="p5V-S5-eeA" customClass="GoodsCollectionViewCell" customModule="OnlineStore" customModuleProvider="target">
+                                        <rect key="frame" x="83.5" y="0.0" width="188" height="243"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="188" height="243"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="ewI-CH-B4b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="151"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goods name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMc-Lv-eAG">
+                                                    <rect key="frame" x="12" y="176" width="97" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price: 20$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5s-eb-XZw">
+                                                    <rect key="frame" x="12" y="202" width="79" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBG-3P-87U">
+                                                    <rect key="frame" x="12" y="150" width="71" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="geT-d2-uCW" firstAttribute="top" secondItem="gcu-6W-Qzt" secondAttribute="bottom" id="4uj-rk-JyF"/>
+                            <constraint firstAttribute="trailing" secondItem="geT-d2-uCW" secondAttribute="trailing" constant="10" id="F8G-IT-H4Y"/>
+                            <constraint firstItem="geT-d2-uCW" firstAttribute="bottom" secondItem="2cW-0A-qQX" secondAttribute="bottom" id="H18-Zk-zkH"/>
                             <constraint firstItem="gcu-6W-Qzt" firstAttribute="top" secondItem="2cW-0A-qQX" secondAttribute="top" id="PqJ-F8-Y0H"/>
-                            <constraint firstItem="2cW-0A-qQX" firstAttribute="trailing" secondItem="FIT-ym-q08" secondAttribute="trailing" id="Zc8-uI-lXx"/>
-                            <constraint firstItem="2cW-0A-qQX" firstAttribute="bottom" secondItem="FIT-ym-q08" secondAttribute="bottom" id="eW2-L8-ewm"/>
+                            <constraint firstItem="geT-d2-uCW" firstAttribute="leading" secondItem="2cW-0A-qQX" secondAttribute="leading" constant="10" id="Uvq-5h-u8S"/>
                             <constraint firstItem="gcu-6W-Qzt" firstAttribute="trailing" secondItem="2cW-0A-qQX" secondAttribute="trailing" id="fu3-Ib-bJe"/>
-                            <constraint firstItem="FIT-ym-q08" firstAttribute="top" secondItem="gcu-6W-Qzt" secondAttribute="bottom" id="pnO-4i-PGg"/>
                             <constraint firstItem="gcu-6W-Qzt" firstAttribute="leading" secondItem="2cW-0A-qQX" secondAttribute="leading" id="sIO-e1-N7n"/>
-                            <constraint firstItem="FIT-ym-q08" firstAttribute="leading" secondItem="2cW-0A-qQX" secondAttribute="leading" id="wfq-0K-nma"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2cW-0A-qQX"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Goods " id="DdO-zr-taX"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Goods " id="DdO-zr-taX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" id="Ls5-wU-bLa"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="collectionView" destination="geT-d2-uCW" id="Luo-0j-1fR"/>
                         <outlet property="searchDisplayController" destination="Bde-u9-oes" id="9bX-4x-UyA"/>
-                        <outlet property="tableView" destination="FIT-ym-q08" id="cf2-Pt-hhk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwt-wP-J4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -227,6 +264,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2" width="750" height="514"/>
+        <image name="cart" width="48" height="48"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

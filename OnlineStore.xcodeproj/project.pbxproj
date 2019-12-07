@@ -17,7 +17,7 @@
 		8785FC5D239AA2D900BC61FC /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC5C239AA2D900BC61FC /* Slide.swift */; };
 		8785FC61239ACADB00BC61FC /* CatalogAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC60239ACADB00BC61FC /* CatalogAdapter.swift */; };
 		8785FC63239ACD1200BC61FC /* CatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC62239ACD1200BC61FC /* CatalogTableViewCell.swift */; };
-		8785FC66239AD2C500BC61FC /* GoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC65239AD2C500BC61FC /* GoodsTableViewCell.swift */; };
+		8785FC66239AD2C500BC61FC /* GoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC65239AD2C500BC61FC /* GoodsCollectionViewCell.swift */; };
 		8785FC68239AD2FC00BC61FC /* GoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC67239AD2FC00BC61FC /* GoodsViewController.swift */; };
 		8785FC6A239AD31500BC61FC /* GoodsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC69239AD31500BC61FC /* GoodsAdapter.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		8785FC5C239AA2D900BC61FC /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		8785FC60239ACADB00BC61FC /* CatalogAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogAdapter.swift; sourceTree = "<group>"; };
 		8785FC62239ACD1200BC61FC /* CatalogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewCell.swift; sourceTree = "<group>"; };
-		8785FC65239AD2C500BC61FC /* GoodsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsTableViewCell.swift; sourceTree = "<group>"; };
+		8785FC65239AD2C500BC61FC /* GoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8785FC67239AD2FC00BC61FC /* GoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsViewController.swift; sourceTree = "<group>"; };
 		8785FC69239AD31500BC61FC /* GoodsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +107,7 @@
 			children = (
 				8785FC67239AD2FC00BC61FC /* GoodsViewController.swift */,
 				8785FC69239AD31500BC61FC /* GoodsAdapter.swift */,
-				8785FC65239AD2C500BC61FC /* GoodsTableViewCell.swift */,
+				8785FC65239AD2C500BC61FC /* GoodsCollectionViewCell.swift */,
 			);
 			path = GoodsViewController;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			files = (
 				8711DD12239A91E700A7DE77 /* CatalogViewController.swift in Sources */,
 				8711DD0E239A91E700A7DE77 /* AppDelegate.swift in Sources */,
-				8785FC66239AD2C500BC61FC /* GoodsTableViewCell.swift in Sources */,
+				8785FC66239AD2C500BC61FC /* GoodsCollectionViewCell.swift in Sources */,
 				8711DD10239A91E700A7DE77 /* MainViewController.swift in Sources */,
 				8785FC63239ACD1200BC61FC /* CatalogTableViewCell.swift in Sources */,
 				8785FC61239ACADB00BC61FC /* CatalogAdapter.swift in Sources */,

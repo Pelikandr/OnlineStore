@@ -10,13 +10,13 @@ import UIKit
 
 class GoodsViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     private let adapter = GoodsAdapter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = adapter
-        tableView.dataSource = adapter
+        collectionView.delegate = adapter
+        collectionView.dataSource = adapter   
     }
 }
