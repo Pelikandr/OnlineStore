@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ss4-lZ-bPr">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ss4-lZ-bPr">
                                 <rect key="frame" x="84" y="315" width="207" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
@@ -53,7 +53,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-wL-yZZ">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatalogTableViewCell" id="fPV-HT-pLc" customClass="CatalogTableViewCell" customModule="OnlineStore" customModuleProvider="target">
@@ -66,23 +66,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-dM-F1d">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="taB-tI-ojP"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CUC-wL-yZZ" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="9LY-lu-E23"/>
                             <constraint firstItem="CUC-wL-yZZ" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="CPd-Rm-uuY"/>
-                            <constraint firstItem="3Xm-dM-F1d" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="SKS-tG-R0Q"/>
+                            <constraint firstItem="CUC-wL-yZZ" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="HIJ-Ft-tZs"/>
                             <constraint firstItem="CUC-wL-yZZ" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="gvk-X7-sGO"/>
-                            <constraint firstItem="CUC-wL-yZZ" firstAttribute="top" secondItem="3Xm-dM-F1d" secondAttribute="bottom" id="igh-tf-9i1"/>
-                            <constraint firstItem="3Xm-dM-F1d" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="re2-mo-hj3"/>
-                            <constraint firstItem="3Xm-dM-F1d" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="wbb-h5-TcG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -99,7 +89,6 @@
                 <searchDisplayController id="Tjd-Wz-dQk">
                     <connections>
                         <outlet property="delegate" destination="8rJ-Kc-sve" id="1KP-zY-vuk"/>
-                        <outlet property="searchBar" destination="3Xm-dM-F1d" id="X4f-sm-vkc"/>
                         <outlet property="searchContentsController" destination="8rJ-Kc-sve" id="cQV-fF-i6y"/>
                         <outlet property="searchResultsDataSource" destination="8rJ-Kc-sve" id="HtN-wU-Hvu"/>
                         <outlet property="searchResultsDelegate" destination="8rJ-Kc-sve" id="y6V-w6-Lev"/>
@@ -116,15 +105,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-6W-Qzt">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Xxg-yD-GqT" id="iYt-fh-l3T"/>
-                                </connections>
-                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="geT-d2-uCW">
-                                <rect key="frame" x="10" y="120" width="355" height="454"/>
+                                <rect key="frame" x="10" y="64" width="355" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0Kn-NG-Ad1">
                                     <size key="itemSize" width="188" height="243"/>
@@ -173,13 +155,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="geT-d2-uCW" firstAttribute="top" secondItem="gcu-6W-Qzt" secondAttribute="bottom" id="4uj-rk-JyF"/>
                             <constraint firstAttribute="trailing" secondItem="geT-d2-uCW" secondAttribute="trailing" constant="10" id="F8G-IT-H4Y"/>
                             <constraint firstItem="geT-d2-uCW" firstAttribute="bottom" secondItem="2cW-0A-qQX" secondAttribute="bottom" id="H18-Zk-zkH"/>
-                            <constraint firstItem="gcu-6W-Qzt" firstAttribute="top" secondItem="2cW-0A-qQX" secondAttribute="top" id="PqJ-F8-Y0H"/>
                             <constraint firstItem="geT-d2-uCW" firstAttribute="leading" secondItem="2cW-0A-qQX" secondAttribute="leading" constant="10" id="Uvq-5h-u8S"/>
-                            <constraint firstItem="gcu-6W-Qzt" firstAttribute="trailing" secondItem="2cW-0A-qQX" secondAttribute="trailing" id="fu3-Ib-bJe"/>
-                            <constraint firstItem="gcu-6W-Qzt" firstAttribute="leading" secondItem="2cW-0A-qQX" secondAttribute="leading" id="sIO-e1-N7n"/>
+                            <constraint firstItem="geT-d2-uCW" firstAttribute="top" secondItem="2cW-0A-qQX" secondAttribute="top" id="mfY-jc-xss"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2cW-0A-qQX"/>
                     </view>
@@ -197,7 +176,6 @@
                 <searchDisplayController id="Bde-u9-oes">
                     <connections>
                         <outlet property="delegate" destination="Xxg-yD-GqT" id="WEd-LT-EIR"/>
-                        <outlet property="searchBar" destination="gcu-6W-Qzt" id="hfw-Sv-3dq"/>
                         <outlet property="searchContentsController" destination="Xxg-yD-GqT" id="8XH-e9-hkb"/>
                         <outlet property="searchResultsDataSource" destination="Xxg-yD-GqT" id="taK-6j-PPb"/>
                         <outlet property="searchResultsDelegate" destination="Xxg-yD-GqT" id="VMB-PB-ELD"/>

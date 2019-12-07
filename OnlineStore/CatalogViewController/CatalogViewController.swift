@@ -20,9 +20,30 @@ class CatalogViewController: UIViewController {
         tableView.delegate = adapter
         tableView.dataSource = adapter
         
+        adapter.onCategoryUpdate = { [unowned self] (int: Int) in
+            self.tableView.reloadData()
+        }
+        
         adapter.onCategorySelected = { [unowned self] (int: Int) in
             self.performSegue(withIdentifier: "toGoodsViewController", sender: nil)
         }
+        
+        adapter.searchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = adapter
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            
+            self.tableView.tableHeaderView = controller.searchBar
+    
+            return controller
+        })()
+        
+        self.tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //self.adapter.searchController.isActive = false //.isActive = false
     }
 }
 
