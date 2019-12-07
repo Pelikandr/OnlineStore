@@ -19,5 +19,4 @@ class GoodsViewController: UIViewController {
         tableView.delegate = adapter
         tableView.dataSource = adapter
     }
-
 }

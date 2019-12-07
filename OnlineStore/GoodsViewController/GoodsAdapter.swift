@@ -22,5 +22,4 @@ class GoodsAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoodsTableViewCell", for: indexPath) as! GoodsTableViewCell
         return cell
     }
-
 }

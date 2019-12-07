@@ -12,7 +12,6 @@ class CatalogViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
     private let adapter = CatalogAdapter()
 
     override func viewDidLoad() {
@@ -26,6 +25,5 @@ class CatalogViewController: UIViewController {
             self.performSegue(withIdentifier: "toGoodsViewController", sender: nil)
         }
     }
-
 }
 

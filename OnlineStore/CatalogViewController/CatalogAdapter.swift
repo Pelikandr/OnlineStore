@@ -29,5 +29,4 @@ class CatalogAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         onCategorySelected!(1)
     }
-    
 }
