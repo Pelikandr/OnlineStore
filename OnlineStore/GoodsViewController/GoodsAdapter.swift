@@ -1,5 +1,5 @@
 //
-//  CatalogAdapter.swift
+//  GoodsAdapter.swift
 //  OnlineStore
 //
 //  Created by Denis Zayakin on 12/6/19.
@@ -8,10 +8,8 @@
 
 import UIKit
 
-class CatalogAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
-    
-    var onCategorySelected: ((Int) -> Void)?
-    
+class GoodsAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -21,13 +19,8 @@ class CatalogAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CatalogTableViewCell", for: indexPath) as! CatalogTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GoodsTableViewCell", for: indexPath) as! GoodsTableViewCell
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onCategorySelected!(1)
-    }
-    
+
 }
