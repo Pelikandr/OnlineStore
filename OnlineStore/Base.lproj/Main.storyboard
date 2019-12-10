@@ -232,7 +232,7 @@
                         <outlet property="collectionView" destination="geT-d2-uCW" id="Luo-0j-1fR"/>
                         <outlet property="searchBar" destination="ful-gL-tDT" id="96m-Az-U6d"/>
                         <outlet property="searchDisplayController" destination="Bde-u9-oes" id="9bX-4x-UyA"/>
-                        <segue destination="2no-T1-F4f" kind="show" identifier="toGoodsDetailViewController" id="Aj1-Ub-deL"/>
+                        <segue destination="mgv-Ny-g8f" kind="show" identifier="toGoodsDetailViewController" id="uoB-3o-5gY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwt-wP-J4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,45 +247,119 @@
             </objects>
             <point key="canvasLocation" x="2264.8000000000002" y="363.86806596701655"/>
         </scene>
-        <!--Goods Detail View Controller-->
-        <scene sceneID="RW6-Zm-r05">
+        <!--Goods Detail Table View Controller-->
+        <scene sceneID="ide-dD-Wxo">
             <objects>
-                <viewController id="2no-T1-F4f" customClass="GoodsDetailViewController" customModule="OnlineStore" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oq0-UN-FGC">
+                <tableViewController id="mgv-Ny-g8f" customClass="GoodsDetailTableViewController" customModule="OnlineStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Feq-Nb-wir">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jht-tn-33b">
-                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoodsDetailCell" id="n7m-Bg-Cjm" customClass="GoodsDetailTableViewCell" customModule="OnlineStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="z5I-MD-smq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="481" id="RaO-mS-RPs">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="481"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n7m-Bg-Cjm" id="kMx-uD-b2j">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RaO-mS-RPs" id="gXD-Kh-K5J">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="480.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-au-FKk">
+                                                    <rect key="frame" x="16" y="11" width="343" height="181"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </scrollView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7za-KH-TC4">
+                                                    <rect key="frame" x="16" y="200" width="108" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3Q-et-Y4B">
+                                                    <rect key="frame" x="16" y="229" width="31" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kN2-tV-zbw">
+                                                    <rect key="frame" x="149" y="400" width="75" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Checkoout"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkv-Xu-gom">
+                                                    <rect key="frame" x="149" y="438" width="77" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Add to cart"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE6-W8-5wZ">
+                                                    <rect key="frame" x="49" y="257" width="277" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Color">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="chooseColorButton:" destination="S05-oJ-Ivd" eventType="touchUpInside" id="G5A-yb-pDX"/>
+                                                        <action selector="colorSelectButton:" destination="mgv-Ny-g8f" eventType="touchUpInside" id="Yjg-E1-kfa"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqb-TX-FDJ">
+                                                    <rect key="frame" x="47" y="315" width="277" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Choose size">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="chooseSizeButton:" destination="S05-oJ-Ivd" eventType="touchUpInside" id="pGV-ZT-ssy"/>
+                                                        <action selector="sizeSelectButton:" destination="mgv-Ny-g8f" eventType="touchUpInside" id="spP-lY-s6B"/>
+                                                    </connections>
+                                                </button>
+                                                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-Ef-DWG">
+                                                    <rect key="frame" x="29" y="200" width="317" height="173"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOE-ew-CuT">
+                                                            <rect key="frame" x="259" y="0.0" width="50" height="35"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Done">
+                                                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="pickerDoneButton:" destination="mgv-Ny-g8f" eventType="touchUpInside" id="4lV-F3-f2e"/>
+                                                            </connections>
+                                                        </button>
+                                                        <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zwO-50-qzp">
+                                                            <rect key="frame" x="4" y="31" width="309" height="142"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        </pickerView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="MNt-0f-dsE" firstAttribute="trailing" secondItem="jht-tn-33b" secondAttribute="trailing" id="TfK-6W-1RA"/>
-                            <constraint firstItem="jht-tn-33b" firstAttribute="top" secondItem="MNt-0f-dsE" secondAttribute="top" id="Wxd-nc-Nr8"/>
-                            <constraint firstItem="jht-tn-33b" firstAttribute="leading" secondItem="MNt-0f-dsE" secondAttribute="leading" id="Z3Z-KM-5RU"/>
-                            <constraint firstItem="MNt-0f-dsE" firstAttribute="bottom" secondItem="jht-tn-33b" secondAttribute="bottom" id="dde-te-uzG"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="MNt-0f-dsE"/>
-                    </view>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="mgv-Ny-g8f" id="WIv-6T-fX4"/>
+                            <outlet property="delegate" destination="mgv-Ny-g8f" id="47q-aE-cFO"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="tableView" destination="jht-tn-33b" id="U4d-X9-Wa6"/>
+                        <outlet property="colorButton" destination="aE6-W8-5wZ" id="eDZ-jj-JNm"/>
+                        <outlet property="picker" destination="zwO-50-qzp" id="h7H-yg-EOj"/>
+                        <outlet property="pickerSubview" destination="UZa-Ef-DWG" id="UKC-3N-Tf4"/>
+                        <outlet property="sizeButton" destination="Tqb-TX-FDJ" id="voo-NB-ZSl"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cl2-Ee-TKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3I-TI-sAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="S05-oJ-Ivd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3023" y="364"/>
+            <point key="canvasLocation" x="3066.4000000000001" y="363.86806596701655"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
