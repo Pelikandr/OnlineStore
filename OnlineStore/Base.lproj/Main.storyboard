@@ -232,6 +232,7 @@
                         <outlet property="collectionView" destination="geT-d2-uCW" id="Luo-0j-1fR"/>
                         <outlet property="searchBar" destination="ful-gL-tDT" id="96m-Az-U6d"/>
                         <outlet property="searchDisplayController" destination="Bde-u9-oes" id="9bX-4x-UyA"/>
+                        <segue destination="2no-T1-F4f" kind="show" identifier="toGoodsDetailViewController" id="Aj1-Ub-deL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwt-wP-J4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,6 +246,46 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2264.8000000000002" y="363.86806596701655"/>
+        </scene>
+        <!--Goods Detail View Controller-->
+        <scene sceneID="RW6-Zm-r05">
+            <objects>
+                <viewController id="2no-T1-F4f" customClass="GoodsDetailViewController" customModule="OnlineStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oq0-UN-FGC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jht-tn-33b">
+                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoodsDetailCell" id="n7m-Bg-Cjm" customClass="GoodsDetailTableViewCell" customModule="OnlineStore" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n7m-Bg-Cjm" id="kMx-uD-b2j">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MNt-0f-dsE" firstAttribute="trailing" secondItem="jht-tn-33b" secondAttribute="trailing" id="TfK-6W-1RA"/>
+                            <constraint firstItem="jht-tn-33b" firstAttribute="top" secondItem="MNt-0f-dsE" secondAttribute="top" id="Wxd-nc-Nr8"/>
+                            <constraint firstItem="jht-tn-33b" firstAttribute="leading" secondItem="MNt-0f-dsE" secondAttribute="leading" id="Z3Z-KM-5RU"/>
+                            <constraint firstItem="MNt-0f-dsE" firstAttribute="bottom" secondItem="jht-tn-33b" secondAttribute="bottom" id="dde-te-uzG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MNt-0f-dsE"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="jht-tn-33b" id="U4d-X9-Wa6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cl2-Ee-TKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3023" y="364"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

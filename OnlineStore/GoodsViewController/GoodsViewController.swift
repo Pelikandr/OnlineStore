@@ -22,8 +22,9 @@ class GoodsViewController: UIViewController {
         searchBar.delegate = adapter
         searchBar.barTintColor = UIColor.white
         
-        adapter.onGoodsUpdate = { [unowned self] (int: Int) in
+        adapter.onProductSelected = { [unowned self] (product: Product) in
             self.collectionView.reloadData()
+            self.performSegue(withIdentifier: "toGoodsDetailViewController", sender: nil)
         }
     }
 }

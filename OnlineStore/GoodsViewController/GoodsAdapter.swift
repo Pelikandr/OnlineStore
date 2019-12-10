@@ -10,8 +10,7 @@ import UIKit
 
 class GoodsAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
-    var onGoodsUpdate: ((Int) -> Void)?
-    var searchController = UISearchController()
+    var onProductSelected: ((Product) -> Void)?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return DataSource.shared.products.count
@@ -21,6 +20,10 @@ class GoodsAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goodsCell", for: indexPath) as! GoodsCollectionViewCell
         cell.name.text = DataSource.shared.products[indexPath.row].name
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        onProductSelected!(DataSource.shared.products[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
