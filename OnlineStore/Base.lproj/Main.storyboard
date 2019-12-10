@@ -268,6 +268,12 @@
                                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-au-FKk">
                                                     <rect key="frame" x="16" y="11" width="343" height="181"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uD4-HA-dDv">
+                                                            <rect key="frame" x="174" y="157" width="39" height="37"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </pageControl>
+                                                    </subviews>
                                                 </scrollView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7za-KH-TC4">
                                                     <rect key="frame" x="16" y="200" width="108" height="21"/>
@@ -351,8 +357,10 @@
                     </tableView>
                     <connections>
                         <outlet property="colorButton" destination="aE6-W8-5wZ" id="eDZ-jj-JNm"/>
+                        <outlet property="pageControl" destination="uD4-HA-dDv" id="ire-XL-fc1"/>
                         <outlet property="picker" destination="zwO-50-qzp" id="h7H-yg-EOj"/>
                         <outlet property="pickerSubview" destination="UZa-Ef-DWG" id="UKC-3N-Tf4"/>
+                        <outlet property="scrollView" destination="9sA-au-FKk" id="GAi-KY-9hk"/>
                         <outlet property="sizeButton" destination="Tqb-TX-FDJ" id="voo-NB-ZSl"/>
                     </connections>
                 </tableViewController>

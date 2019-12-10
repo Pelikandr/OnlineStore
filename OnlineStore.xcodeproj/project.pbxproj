@@ -26,6 +26,8 @@
 		8785FC68239AD2FC00BC61FC /* GoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC67239AD2FC00BC61FC /* GoodsViewController.swift */; };
 		8785FC6A239AD31500BC61FC /* GoodsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC69239AD31500BC61FC /* GoodsAdapter.swift */; };
 		87BD527823A0213E0015C66D /* GoodsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BD527723A0213E0015C66D /* GoodsDetailTableViewController.swift */; };
+		87BD527D23A041980015C66D /* GoodsDetailSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BD527B23A041980015C66D /* GoodsDetailSlide.swift */; };
+		87BD528023A042390015C66D /* GoodDetailSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87BD527F23A042390015C66D /* GoodDetailSlide.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		8785FC67239AD2FC00BC61FC /* GoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsViewController.swift; sourceTree = "<group>"; };
 		8785FC69239AD31500BC61FC /* GoodsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsAdapter.swift; sourceTree = "<group>"; };
 		87BD527723A0213E0015C66D /* GoodsDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsDetailTableViewController.swift; sourceTree = "<group>"; };
+		87BD527B23A041980015C66D /* GoodsDetailSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsDetailSlide.swift; sourceTree = "<group>"; };
+		87BD527F23A042390015C66D /* GoodDetailSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodDetailSlide.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				87BD527723A0213E0015C66D /* GoodsDetailTableViewController.swift */,
+				87BD527B23A041980015C66D /* GoodsDetailSlide.swift */,
+				87BD527F23A042390015C66D /* GoodDetailSlide.xib */,
 				8754C14C239FF57D0082F32B /* GoodsDetailTableViewCell.swift */,
 			);
 			path = GoodsDetailViewController;
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87BD528023A042390015C66D /* GoodDetailSlide.xib in Resources */,
 				8711DD1A239A91E900A7DE77 /* LaunchScreen.storyboard in Resources */,
 				8711DD17239A91E900A7DE77 /* Assets.xcassets in Resources */,
 				8711DD15239A91E700A7DE77 /* Main.storyboard in Resources */,
@@ -240,6 +247,7 @@
 				874ADBA4239C501A006ADFF3 /* DataSource.swift in Sources */,
 				8785FC68239AD2FC00BC61FC /* GoodsViewController.swift in Sources */,
 				87BD527823A0213E0015C66D /* GoodsDetailTableViewController.swift in Sources */,
+				87BD527D23A041980015C66D /* GoodsDetailSlide.swift in Sources */,
 				8754C144239FADAB0082F32B /* CartAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

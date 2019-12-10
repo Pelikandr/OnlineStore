@@ -10,12 +10,16 @@ import UIKit
 
 class GoodsDetailTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sizeButton: UIButton!
     @IBOutlet weak var colorButton: UIButton!
     @IBOutlet weak var pickerSubview: UIView!
     @IBOutlet weak var picker: UIPickerView!
     
     var choice: String?
+    var slides: [Slide] = []
+    var scrollingTimer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,74 @@ class GoodsDetailTableViewController: UITableViewController, UIPickerViewDataSou
         sizeButton.layer.cornerRadius = 5
         colorButton.layer.cornerRadius = 5
         choice = DataSource.shared.picker[0]
+        
+        scrollView.delegate = self
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentOffset = CGPoint(x: 0, y: 0)
+
+        slides = createSlides()
+        setupSlideScrollView(slides: slides)
+        
+        pageControl.numberOfPages = slides.count
+        pageControl.currentPage = 0
+       
+        self.view.addSubview(pageControl)
+        self.view.bringSubviewToFront(pageControl)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        scrollingTimer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.animateScrollView), userInfo: nil, repeats: true)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        scrollingTimer?.invalidate()
+    }
+    
+    @IBAction func toCartVC(_ sender: Any) {
+        self.performSegue(withIdentifier: "toCartViewController", sender: nil)
+    }
+    
+    func createSlides() -> [Slide] {
+        
+        let slide1: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide1.imageView.image = UIImage(named: "1")
+        
+        let slide2: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide2.imageView.image = UIImage(named: "2")
+        
+        let slide3: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
+        slide3.imageView.image = UIImage(named: "3")
+        
+        return [slide1, slide2, slide3]
+    }
+    
+    func setupSlideScrollView(slides : [Slide]) {
+        scrollView.frame = CGRect(x: 0, y: -150, width: view.frame.width, height: view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
+        scrollView.isPagingEnabled = true
+        
+        for i in 0 ..< slides.count {
+            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+            scrollView.addSubview(slides[i])
+        }
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
+        pageControl.currentPage = Int(pageIndex)
+    }
+    
+    @objc func animateScrollView() {
+        let scrollWidth = scrollView.bounds.width
+        let currentXOffset = scrollView.contentOffset.x
+        
+        let lastXPos = currentXOffset + scrollWidth
+        if lastXPos != scrollView.contentSize.width {
+            scrollView.setContentOffset(CGPoint(x: lastXPos, y: 0), animated: true)
+        }
+        else {
+            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        }
     }
     
     
