@@ -10,6 +10,6 @@ import Foundation
 
 class DataSource {
     static var shared = DataSource()
-    var arrCountry = ["Afghanistan", "Algeria", "Bahrain","Brazil", "Cuba", "Denmark","Denmark", "Georgia", "Hong Kong", "Iceland", "India", "Japan", "Kuwait", "Nepal"];
+    var arrCountry = ["Category 1","Category 2","Category 3","Category 4","Category 5","Category 6"]
     var arrFilter: [String] = []
 }

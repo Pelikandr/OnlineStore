@@ -27,7 +27,7 @@ class CatalogAdapter: NSObject, UITableViewDelegate, UITableViewDataSource, UISe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CatalogTableViewCell", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "catalogCell", for: indexPath as IndexPath)
         configureCell(cell: cell, forRowAtIndexPath: indexPath)
         return cell
     }

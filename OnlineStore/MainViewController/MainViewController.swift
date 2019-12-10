@@ -40,6 +40,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         scrollingTimer?.invalidate()
     }
 
+    @IBAction func toCartVC(_ sender: Any) {
+        self.performSegue(withIdentifier: "toCartViewController", sender: nil)
+    }
+    
     func createSlides() -> [Slide] {
         
         let slide1: Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide

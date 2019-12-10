@@ -33,6 +33,7 @@ class CatalogViewController: UIViewController {
             controller.searchResultsUpdater = adapter
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.sizeToFit()
+            controller.searchBar.barTintColor = UIColor.white
             
             self.tableView.tableHeaderView = controller.searchBar
     
@@ -44,6 +45,8 @@ class CatalogViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         //self.adapter.searchController.isActive = false //.isActive = false
+        //self.adapter.searchController.dismiss(animated: true, completion: nil)
+        
     }
 }
 
