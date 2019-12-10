@@ -14,11 +14,12 @@ class GoodsAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDelega
     var searchController = UISearchController()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return DataSource.shared.products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goodsCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "goodsCell", for: indexPath) as! GoodsCollectionViewCell
+        cell.name.text = DataSource.shared.products[indexPath.row].name
         return cell
     }
     
