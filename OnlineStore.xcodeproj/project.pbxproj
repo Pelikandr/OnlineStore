@@ -17,7 +17,6 @@
 		8754C141239FAD6A0082F32B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754C140239FAD6A0082F32B /* CartViewController.swift */; };
 		8754C144239FADAB0082F32B /* CartAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754C143239FADAB0082F32B /* CartAdapter.swift */; };
 		8754C146239FADCC0082F32B /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754C145239FADCC0082F32B /* CartTableViewCell.swift */; };
-		8754C14D239FF57D0082F32B /* GoodsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8754C14C239FF57D0082F32B /* GoodsDetailTableViewCell.swift */; };
 		8785FC5B239AA25D00BC61FC /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8785FC5A239AA25D00BC61FC /* Slide.xib */; };
 		8785FC5D239AA2D900BC61FC /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC5C239AA2D900BC61FC /* Slide.swift */; };
 		8785FC61239ACADB00BC61FC /* CatalogAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785FC60239ACADB00BC61FC /* CatalogAdapter.swift */; };
@@ -43,7 +42,6 @@
 		8754C140239FAD6A0082F32B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		8754C143239FADAB0082F32B /* CartAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartAdapter.swift; sourceTree = "<group>"; };
 		8754C145239FADCC0082F32B /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
-		8754C14C239FF57D0082F32B /* GoodsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		8785FC5A239AA25D00BC61FC /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		8785FC5C239AA2D900BC61FC /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		8785FC60239ACADB00BC61FC /* CatalogAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogAdapter.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				87BD527723A0213E0015C66D /* GoodsDetailTableViewController.swift */,
 				87BD527B23A041980015C66D /* GoodsDetailSlide.swift */,
 				87BD527F23A042390015C66D /* GoodDetailSlide.xib */,
-				8754C14C239FF57D0082F32B /* GoodsDetailTableViewCell.swift */,
 			);
 			path = GoodsDetailViewController;
 			sourceTree = "<group>";
@@ -243,7 +240,6 @@
 				8754C141239FAD6A0082F32B /* CartViewController.swift in Sources */,
 				8785FC6A239AD31500BC61FC /* GoodsAdapter.swift in Sources */,
 				8754C146239FADCC0082F32B /* CartTableViewCell.swift in Sources */,
-				8754C14D239FF57D0082F32B /* GoodsDetailTableViewCell.swift in Sources */,
 				874ADBA4239C501A006ADFF3 /* DataSource.swift in Sources */,
 				8785FC68239AD2FC00BC61FC /* GoodsViewController.swift in Sources */,
 				87BD527823A0213E0015C66D /* GoodsDetailTableViewController.swift in Sources */,

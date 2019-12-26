@@ -14,6 +14,7 @@ class GoodsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     private let adapter = GoodsAdapter()
+    var selectedProduct: Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,13 @@ class GoodsViewController: UIViewController {
         
         adapter.onProductSelected = { [unowned self] (product: Product) in
             self.collectionView.reloadData()
+            self.selectedProduct = product
             self.performSegue(withIdentifier: "toGoodsDetailViewController", sender: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextVC = segue.destination as? GoodsDetailTableViewController else { return }
+        nextVC.selectedProduct = selectedProduct!
     }
 }

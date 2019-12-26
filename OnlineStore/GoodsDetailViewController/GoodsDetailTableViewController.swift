@@ -16,10 +16,12 @@ class GoodsDetailTableViewController: UITableViewController, UIPickerViewDataSou
     @IBOutlet weak var colorButton: UIButton!
     @IBOutlet weak var pickerSubview: UIView!
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var productNameLabel: UILabel!
     
     var choice: String?
     var slides: [Slide] = []
     var scrollingTimer: Timer?
+    var selectedProduct: Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,8 @@ class GoodsDetailTableViewController: UITableViewController, UIPickerViewDataSou
         
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
+        
+        productNameLabel.text = selectedProduct?.name
        
         self.view.addSubview(pageControl)
         self.view.bringSubviewToFront(pageControl)
@@ -142,4 +146,8 @@ class GoodsDetailTableViewController: UITableViewController, UIPickerViewDataSou
     @IBAction func sizeSelectButton(_ sender: Any) {
     }
     
+    @IBAction func addToCartButtonTapped(_ sender: Any) {
+        DataSource.shared.addToCart(product: selectedProduct!)
+        print((selectedProduct?.name)! + " added to cart")
+    }
 }

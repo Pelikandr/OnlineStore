@@ -23,4 +23,8 @@ class DataSource {
     var products: [Product] = [Product(name: "Product 1"), Product(name: "Product 2"), Product(name: "Product 3"), Product(name: "Product 4"), Product(name: "Product 5"), Product(name: "Product 6")]
     var picker = ["red", "green", "yellow", "blue"]
     var cart: [Product] = []
+    
+    func addToCart(product: Product) {
+        cart.append(product)
+    }
 }

@@ -298,6 +298,9 @@
                                                     <rect key="frame" x="149" y="438" width="77" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Add to cart"/>
+                                                    <connections>
+                                                        <action selector="addToCartButtonTapped:" destination="mgv-Ny-g8f" eventType="touchUpInside" id="m3c-4W-Vzc"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE6-W8-5wZ">
                                                     <rect key="frame" x="49" y="257" width="277" height="50"/>
@@ -324,7 +327,7 @@
                                                     </connections>
                                                 </button>
                                                 <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-Ef-DWG">
-                                                    <rect key="frame" x="29" y="200" width="317" height="173"/>
+                                                    <rect key="frame" x="29" y="154" width="317" height="173"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOE-ew-CuT">
@@ -360,6 +363,7 @@
                         <outlet property="pageControl" destination="uD4-HA-dDv" id="ire-XL-fc1"/>
                         <outlet property="picker" destination="zwO-50-qzp" id="h7H-yg-EOj"/>
                         <outlet property="pickerSubview" destination="UZa-Ef-DWG" id="UKC-3N-Tf4"/>
+                        <outlet property="productNameLabel" destination="7za-KH-TC4" id="ucC-Iv-TGW"/>
                         <outlet property="scrollView" destination="9sA-au-FKk" id="GAi-KY-9hk"/>
                         <outlet property="sizeButton" destination="Tqb-TX-FDJ" id="voo-NB-ZSl"/>
                     </connections>
